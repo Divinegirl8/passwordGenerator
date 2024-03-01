@@ -131,10 +131,36 @@ const genenerateNumbers = async (request) => {
 }
  
   return password;
-  
+ }
  
+
+ const genenerateAlphaSymbols = async (request) => {
+  const { length } = request;
+  const alphabeth = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  const symbols =  "~`!@#$%^&*()_-+=}{[]\\|/><.\"\',:;";
+ 
+  let pattern = /[0-9]{0,}/;
+  if (!pattern.test(length)) {
+      throw new LengthException("length must contain numbers from 0 - 9 or more");
+  }
+  if (length < 4 || length == null){
+    throw new LengthException("length cannot be empty or less than 4");
+  }
+ 
+  let password = "";
+ 
+  for (let index = 0; index < length; index++) {
+    if(index % 2 == 0){
+   password += alphabeth.charAt(Math.floor(Math.random() * alphabeth.length));
+  } else{
+    password += symbols.charAt(Math.floor(Math.random() * symbols.length));
+  }
+
+}
+ 
+  return password;
  }
  
 
 
-module.exports = {generateAllCharacters,generateAlphaNum,genenerateAlphabeth,genenerateNumbers,genenerateNumSymbols};
+module.exports = {generateAllCharacters,generateAlphaNum,genenerateAlphabeth,genenerateNumbers,genenerateNumSymbols,genenerateAlphaSymbols};
