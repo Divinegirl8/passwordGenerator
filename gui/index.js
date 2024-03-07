@@ -37,15 +37,15 @@ if(isAlphabeth && isNumber && isSymbol){
                 body: JSON.stringify(data),
             });
     
-            // if (!response.ok) {
-            //     throw new Error('Network response was not ok');
-            // }
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
     
             const result = await response.json();
             screen.textContent = result.res; 
         } catch (error) {
             screen.textContent = error.res;
-            // screen.textContent = 'Error occurred. Please try again.'; 
+            screen.textContent = 'kindly input a number greater than 4'; 
         }
     };
 sendData(data)    
