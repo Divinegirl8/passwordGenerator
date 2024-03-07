@@ -96,17 +96,27 @@ body{
     
 }
 
-
-.display{
-   background-color: #E5F1FF;
+.display {
+    background-color: #E5F1FF;
     width: 547px;
     height: 50px;
-    padding-top: 3px;
-  border-radius: 10px;
-  margin-left: 90px;
-  
-
+    padding-top: 30px;
+    border-radius: 10px;
+    margin-left: 90px;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    white-space: nowrap;
+    padding-left: 20px;
+    font-size: 21px;
+    font-family: "Urbanist", "sans-serif";
+    
 }
+
+
+.display::-webkit-scrollbar {
+    display: none;
+}
+
 
 button{
     width: 50px;
