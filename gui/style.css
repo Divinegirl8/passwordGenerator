@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #93c4c1;
+}
+
+#container{
+    background-color: #fff;
+    max-width: 900px;
+    width: 100%;
+    height: 70vh;
+   margin: 20px auto;
+   margin-top: 150px;
+   border-radius: 20px;
+}
+
+#container #appName{
+    padding-top: 60px;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Urbanist", "sans-serif";
+    color: #0F1114;
+    
+     
+}
+
+#passwordWriteUp{
+    font-family: "Urbanist", "sans-serif";
+    text-align: center;
+    margin-top: 15px;
+    color: #5B5B5B;
+    font-weight: 400;
+    font-size: 24px;
+
+}
+
+#requestCont{
+    margin-top: 50px;
+    text-align: center;
+    
+}
+
+.upperbox{
+    margin-right: 440px;
+    font-size: 21px;
+    font-family: "Urbanist", "sans-serif";
+    font-weight: 500;
+   
+}
+
+.spacebox{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.parent{
+    border: 1px solid #D7D7D7;
+    width: 677px;
+    height: 37px;
+    padding-top: 15px;
+    border-radius: 10px;
+    margin-left: 90px;
+   
+}
+
+.input{
+    border: 1px solid #D7D7D7;
+    width: 647px;
+    height: 50px;
+    padding-top: 3px;
+    border-radius: 10px;
+    margin-top: 3px;
+    outline: none;  
+    font-size: 21px;
+    padding-left: 30px;
+   
+}
+
+.input::placeholder{
+    
+    padding-left: -5px;
+    color: #B8BDCD;
+}
+
+.flexOut{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.display{
+   background-color: #E5F1FF;
+    width: 547px;
+    height: 50px;
+    padding-top: 3px;
+  border-radius: 10px;
+  margin-left: 90px;
+  
+
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #D7D7D7;
+    border-radius: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+}
