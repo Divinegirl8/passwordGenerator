@@ -11,7 +11,7 @@ const generateAllCharacters = async (request) => {
       throw new LengthException("length must contain numbers from 0 - 9 or more");
   }
 
-  if (length < 4 || length == null){
+  if (length < 4 || length > 100 || length == null){
     throw new LengthException("length cannot be empty or less than 4");
   }
 
@@ -41,7 +41,7 @@ const generateAlphaNum = async (request) => {
   if (!pattern.test(length)) {
       throw new LengthException("length must contain numbers from 0 - 9 or more");
   }
-  if (length < 4 || length == null){
+  if (length < 4 || length > 100 || length == null){
     throw new LengthException("length cannot be empty or less than 4");
   }
 
@@ -68,7 +68,7 @@ const genenerateAlphabeth = async (request) => {
  if (!pattern.test(length)) {
      throw new LengthException("length must contain numbers from 0 - 9 or more");
  }
- if (length < 4 || length == null){
+ if (length < 4 || length > 100 || length == null){
    throw new LengthException("length cannot be empty or less than 4");
  }
 
@@ -91,7 +91,7 @@ const genenerateNumbers = async (request) => {
   if (!pattern.test(length)) {
       throw new LengthException("length must contain numbers from 0 - 9 or more");
   }
-  if (length < 4 || length == null){
+  if (length < 4 || length > 100 || length == null){
     throw new LengthException("length cannot be empty or less than 4");
   }
  
@@ -115,7 +115,7 @@ const genenerateNumbers = async (request) => {
   if (!pattern.test(length)) {
       throw new LengthException("length must contain numbers from 0 - 9 or more");
   }
-  if (length < 4 || length == null){
+  if (length < 4 || length > 100 || length == null){
     throw new LengthException("length cannot be empty or less than 4");
   }
  
@@ -143,7 +143,7 @@ const genenerateNumbers = async (request) => {
   if (!pattern.test(length)) {
       throw new LengthException("length must contain numbers from 0 - 9 or more");
   }
-  if (length < 4 || length == null){
+  if (length < 4 || length > 100 || length == null){
     throw new LengthException("length cannot be empty or less than 4");
   }
  
@@ -171,7 +171,7 @@ const genenerateNumbers = async (request) => {
   if (!pattern.test(length)) {
       throw new LengthException("length must contain numbers from 0 - 9 or more");
   }
-  if (length < 4 || length == null){
+  if (length < 4 || length > 100 || length == null){
     throw new LengthException("length cannot be empty or less than 4");
   }
  

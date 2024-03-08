@@ -45,7 +45,7 @@ sendData = async (data,url) => {
         screen.textContent = result.res; 
     } catch (error) {
         screen.textContent = error.message;
-        screen.textContent = 'kindly input a number greater than 3'; 
+        screen.textContent = 'password length should be between 4-100'; 
     }
 };
 
@@ -82,6 +82,7 @@ else if (isSymbol){
 })
 
 
+
 var copy = document.querySelector(".copy");
 copy.addEventListener("click", (e) => {
     e.preventDefault()
@@ -113,4 +114,55 @@ copy.addEventListener("click", (e) => {
 
 });
 
- 
+
+// let newBox = document.createElement("div");
+// newBox.textContent = "copy to clipboard";
+// newBox.style.position = "absolute";
+// newBox.style.background = "white";
+// newBox.style.border = "1px solid black";
+
+// newBox.style.padding = "10px";
+// newBox.style.top = "730px"; 
+// newBox.style.left = "1200px";
+// newBox.style.display = "none";
+
+
+// document.body.appendChild(newBox);
+
+
+// copy.addEventListener("mouseover", () => {
+    
+//     newBox.style.display = "block";
+// });
+
+
+// copy.addEventListener("mouseout", () => {
+//     newBox.style.display = "none";
+// });
+
+
+let newBox = document.createElement("div");
+
+newBox.textContent = "copy to clipboard";
+newBox.style.position = "absolute";
+newBox.style.background = "white";
+newBox.style.border = "1px solid black";
+newBox.style.display = "flex"
+
+newBox.style.padding = "10px";
+newBox.style.margin = "30px auto"
+newBox.style.display = "none";
+
+
+document.body.appendChild(newBox);
+
+
+copy.addEventListener("mouseover", () => {
+    
+    newBox.style.display = "block";
+});
+
+
+copy.addEventListener("mouseout", () => {
+    newBox.style.display = "none";
+});
