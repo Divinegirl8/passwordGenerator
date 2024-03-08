@@ -25,50 +25,54 @@ load.addEventListener ('click',(e) =>{
 
 }
 const data = {length : value}
+
+
+sendData = async (data,url) => {
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const result = await response.json();
+        screen.textContent = result.res; 
+    } catch (error) {
+        screen.textContent = error.message;
+        screen.textContent = 'kindly input a number greater than 3'; 
+    }
+};
+
+
 if(isAlphabeth && isNumber && isSymbol){
     
-    sendData = async (data) => {
-        try {
-            const response = await fetch("http://localhost:4500/api/v1/allCharacters", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-    
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-    
-            const result = await response.json();
-            screen.textContent = result.res; 
-        } catch (error) {
-            screen.textContent = error.res;
-            screen.textContent = 'kindly input a number greater than 4'; 
-        }
-    };
-sendData(data)    
+sendData(data,"http://localhost:4500/api/v1/allCharacters")    
     
 }
 
 else if (isAlphabeth && isNumber){
-    alert("both numlet")
+    sendData(data,"http://localhost:4500/api/v1/alphaNum") 
 }
 
 else if (isAlphabeth && isSymbol){
-    alert("both letsym")
+    sendData(data,"http://localhost:4500/api/v1/alphaSymbols") 
 }
 
 else if (isNumber && isSymbol){
-    alert("numsym")
+    sendData(data,"http://localhost:4500/api/v1/numSymbols") 
 }
 else if  (isAlphabeth){
-    alert("it is alphabeth")
+    sendData(data,"http://localhost:4500/api/v1/alphabeth") 
 }
 
  else if (isNumber){
-    alert("it is a number")
+    sendData(data,"http://localhost:4500/api/v1/numbers") 
 }
 
 
