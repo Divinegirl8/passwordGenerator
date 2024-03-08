@@ -163,4 +163,30 @@ const genenerateNumbers = async (request) => {
  
 
 
-module.exports = {generateAllCharacters,generateAlphaNum,genenerateAlphabeth,genenerateNumbers,genenerateNumSymbols,genenerateAlphaSymbols};
+ const genenerateSymbols = async (request) => {
+  const { length } = request;
+  const symbols =  "~`!@#$%^&*()_-+=}{[]\\|/><.\"\',:;";
+ 
+  let pattern = /[0-9]{0,}/;
+  if (!pattern.test(length)) {
+      throw new LengthException("length must contain numbers from 0 - 9 or more");
+  }
+  if (length < 4 || length == null){
+    throw new LengthException("length cannot be empty or less than 4");
+  }
+ 
+  let password = "";
+ 
+  for (let index = 0; index < length; index++) {
+ 
+    password += symbols.charAt(Math.floor(Math.random() * symbols.length));
+  }
+
+ 
+  return password;
+ }
+ 
+
+
+
+module.exports = {generateAllCharacters,generateAlphaNum,genenerateAlphabeth,genenerateNumbers,genenerateNumSymbols,genenerateAlphaSymbols,genenerateSymbols};

@@ -1,4 +1,4 @@
-const {generateAllCharacters,generateAlphaNum,genenerateAlphabeth,genenerateNumbers,genenerateNumSymbols,genenerateAlphaSymbols} = require('../services/PasswordService')
+const {generateAllCharacters,generateAlphaNum,genenerateAlphabeth,genenerateNumbers,genenerateNumSymbols,genenerateAlphaSymbols,genenerateSymbols} = require('../services/PasswordService')
 
 const allCharactersGeneration = async(request,response) =>{
     try{
@@ -53,4 +53,15 @@ const alphaSymbolGeneration = async(request,response) => {
         response.status(404).json(error.message)
     }
 }
-module.exports = {allCharactersGeneration,alphaNumGeneration,aplhabethGeneration,numbersGeneration,numbersSymbolGeneration,alphaSymbolGeneration}
+
+const SymbolGeneration = async(request,response) => {
+    try{
+        const res = await genenerateSymbols(request.body)
+        response.status(200).json({res})
+    }catch(error){
+        response.status(404).json(error.message)
+    }
+}
+
+
+module.exports = {allCharactersGeneration,alphaNumGeneration,aplhabethGeneration,numbersGeneration,numbersSymbolGeneration,alphaSymbolGeneration,SymbolGeneration}

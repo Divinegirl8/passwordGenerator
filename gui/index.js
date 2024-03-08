@@ -75,7 +75,9 @@ else if  (isAlphabeth){
     sendData(data,"http://localhost:4500/api/v1/numbers") 
 }
 
-
+else if (isSymbol){
+    sendData(data,"http://localhost:4500/api/v1/symbols") 
+}
   
 })
 
